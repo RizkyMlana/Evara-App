@@ -35,4 +35,5 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<AppUser?> getCurrentUser() {
     return remoteDataSource.getCurrentUser();
   }
+
 }

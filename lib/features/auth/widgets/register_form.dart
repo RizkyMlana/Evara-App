@@ -7,24 +7,27 @@ import 'package:evara_app/core/widgets/app_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginForm extends StatefulWidget{
-  const LoginForm({super.key});
-  
-  @override
-  State<LoginForm> createState() => _LoginFormState();
-}
 
-class _LoginFormState extends State<LoginForm> {
+class RegisterForm extends StatefulWidget{
+  const RegisterForm({super.key});
+
+  @override
+  State<RegisterForm> createState() => _RegisterFormState();
+}
+class _RegisterFormState extends State<RegisterForm> {
+  final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
   @override
   void dispose() {
+    nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
+    confirmPasswordController.dispose();
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -34,35 +37,42 @@ class _LoginFormState extends State<LoginForm> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const AppLogo(size: 90),
-            const SizedBox(height: Spacing.xl),
+            const AppLogo(size: 90,),
+            const SizedBox(height: Spacing.xl,),
 
             Text(
-              "Welcome Back",
+              "Create Account",
               textAlign: TextAlign.center,
               style: AppTextStyles.heading2,
             ),
 
             const SizedBox(
-              height: Spacing.md,
+              height: Spacing.sm,
             ),
             Text(
-              "Login to Continue",
+              "Create your Evara Account",
               textAlign: TextAlign.center,
               style: AppTextStyles.bodySmall,
             ),
 
-            const SizedBox(height: Spacing.xxl),
+            const SizedBox(height: Spacing.xl,),
+
+            AppTextField(
+              controller: nameController, 
+              label: "Full Name",
+              prefixIcon: Icons.person_outlined,
+            ),
+            
+            const SizedBox(height: Spacing.md,),
 
             AppTextField(
               controller: emailController, 
               label: "Email",
-              hint: "example@email.com",
               keyboardType: TextInputType.emailAddress,
               prefixIcon: Icons.email_outlined,
             ),
 
-            const SizedBox(height: Spacing.md),
+            const SizedBox(height: Spacing.md,),
 
             AppTextField(
               controller: passwordController, 
@@ -71,38 +81,36 @@ class _LoginFormState extends State<LoginForm> {
               prefixIcon: Icons.lock_outline,
             ),
 
-            const SizedBox(height: Spacing.lg,),
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                onPressed: () {
-                  context.go(AppRoutes.forgotPassword);
-                }, 
-                child: const Text("Forgot Password")),
+            const SizedBox(height: Spacing.md,),
+
+            AppTextField(
+              controller: confirmPasswordController, 
+              label: "Confirm Password",
+              obscureText: true,
+              prefixIcon: Icons.lock_outline,
             ),
 
             const SizedBox(height: Spacing.xl,),
 
             AppButton(
-              text: "Login", 
+              text: "Create Account", 
               onPressed: () {},
             ),
-
-            const SizedBox(height: Spacing.lg),
+            
+            const SizedBox(height: Spacing.lg,),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Don't have an account?"),
+                const Text("Already have an account?"),
                 TextButton(
                   onPressed: () {
-                    context.go(AppRoutes.register);
+                    context.go(AppRoutes.login);
                   }, 
-                  child: const Text("Register"),
-                )
+                  child: const Text("Login")),
               ],
-            ),
-            
+            )
+
           ],
         ),),
       ),

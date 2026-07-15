@@ -1,4 +1,5 @@
 
+import 'package:evara_app/features/auth/widgets/register_form.dart';
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatelessWidget{
@@ -8,7 +9,7 @@ class RegisterPage extends StatelessWidget{
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text("Register Page"),
+        child: RegisterForm(),
       ),
     );
   }

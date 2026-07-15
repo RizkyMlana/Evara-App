@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
-  static const primary = Color(value);
-  static const primaryDark = Color(value);
-  static const primaryLight = Color(value);
+  static const primary = Color(0xFF111827);
+  static const primaryDark = Color(0xFF030712);
+  static const primaryLight = Color(0xFFE5E7EB);
 
-  static const background = Color(value);
+  static const background = Color(0xFFF8FAFC);
   static const surface = Colors.white;
 
-  static const textPrimary = Color(value);
-  static const textSecondary = Color(value);
+  static const textPrimary = Color(0xFF111827);
+  static const textSecondary = Color(0xFF6B7280);
 
-  static const border = Color(value);
+  static const border = Color(0xFFE5E7EB);
 
-  static const success = Color(value);
-  static const warning = Color(value);
-  static const error = Color(value);
+  static const success = Color(0xFF22C55E);
+  static const warning = Color(0xFFF59E0B);
+  static const error = Color(0xFFEF4444);
 }

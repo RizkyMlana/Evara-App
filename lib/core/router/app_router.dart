@@ -38,7 +38,8 @@ final appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.home,
       builder: (context, state) => const AppShell(),
-    )
+    ),
+
 
   ],
   errorBuilder: (context, state) {

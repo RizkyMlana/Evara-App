@@ -1,8 +1,10 @@
+import 'package:evara_app/core/router/routes.dart';
 import 'package:evara_app/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:evara_app/features/family/presentation/pages/family_page.dart';
 import 'package:evara_app/features/profile/presentation/pages/profile_page.dart';
 import 'package:evara_app/features/transaction/presentation/pages/transaction_page.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class AppShell extends StatefulWidget{
   const AppShell({super.key});
@@ -55,6 +57,14 @@ class _AppShellState extends State<AppShell> {
         ],
 
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          context.push(AppRoutes.addTransaction);
+        },
+        child: const Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: 
+        FloatingActionButtonLocation.centerDocked,
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:evara_app/core/theme/app_colors.dart';
 import 'package:evara_app/core/theme/app_spacing.dart';
 import 'package:evara_app/features/dashboard/presentation/widgets/summary_item.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class SummaryCard extends StatelessWidget{
           title: "Income", 
           amount: "Rp. 5.000.000", 
           icon: Icons.arrow_downward, 
-          color: Colors.blue
+          color: AppColors.income
         ),
 
         SizedBox(width: Spacing.md,),
@@ -22,7 +23,7 @@ class SummaryCard extends StatelessWidget{
           title: "Expense", 
           amount: "Rp. 2.000.000", 
           icon: Icons.arrow_upward, 
-          color: Colors.red
+          color: AppColors.expense
         )
       ],
     );

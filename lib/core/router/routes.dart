@@ -5,4 +5,6 @@ class AppRoutes {
   static const emailSent = '/email-sent';
   static const home = '/home';
   static const splash = '/';
+
+  static const addTransaction = "/add-transaction";
 }

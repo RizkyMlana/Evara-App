@@ -15,6 +15,10 @@ class AppColors {
 
   static const border = Color(0xFFE5E7EB);
 
+  static const income = Color(0xFF00BBD4);
+  static const expense = Color(0xFFE53935);
+
+
   static const success = Color(0xFF22C55E);
   static const warning = Color(0xFFF59E0B);
   static const error = Color(0xFFEF4444);

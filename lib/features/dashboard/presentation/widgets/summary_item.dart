@@ -43,7 +43,7 @@ class SummaryItem extends StatelessWidget{
 
             Text(
               amount,
-              style: AppTextStyles.heading2,
+              style: AppTextStyles.amount,
             )
           ],
         ),

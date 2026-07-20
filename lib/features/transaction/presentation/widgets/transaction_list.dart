@@ -1,4 +1,4 @@
-import 'package:evara_app/features/dashboard/presentation/widgets/transaction_tile.dart';
+import 'package:evara_app/features/transaction/presentation/widgets/transaction_tile.dart';
 import 'package:flutter/material.dart';
 
 class TransactionList extends StatelessWidget{

@@ -6,7 +6,7 @@ class SaveTransactionButton extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: double.infinity, 
       height: 52,
       child: FilledButton(
         onPressed: () {}, 

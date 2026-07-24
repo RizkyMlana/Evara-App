@@ -85,7 +85,9 @@ class _LoginFormState extends State<LoginForm> {
 
             AppButton(
               text: "Login", 
-              onPressed: () {},
+              onPressed: () {
+                context.go(AppRoutes.dashboard);
+              },
             ),
 
             const SizedBox(height: Spacing.lg),

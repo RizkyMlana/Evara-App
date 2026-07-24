@@ -1,70 +1,92 @@
 import 'package:evara_app/core/router/routes.dart';
-import 'package:evara_app/features/dashboard/presentation/pages/dashboard_page.dart';
-import 'package:evara_app/features/family/presentation/pages/family_page.dart';
-import 'package:evara_app/features/profile/presentation/pages/profile_page.dart';
-import 'package:evara_app/features/transaction/presentation/pages/transaction_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class AppShell extends StatefulWidget{
-  const AppShell({super.key});
+class AppShell extends StatelessWidget {
+  final Widget child;
 
-  @override
-  State<AppShell> createState() => _AppShellState();
-}
+  const AppShell({
+    super.key,
+    required this.child,
+  });
 
-class _AppShellState extends State<AppShell> {
-  int _currentIndex = 0;
+  int _calculateIndex(BuildContext context) {
+    final location = GoRouterState.of(context).uri.toString();
 
-  final List<Widget> _pages = const [
-    DashboardPage(),
-    TransactionPage(),
-    FamilyPage(),
-    ProfilePage(),
-  ];
+    if (location.startsWith(AppRoutes.transaction)) return 1;
+    if (location.startsWith(AppRoutes.family)) return 2;
+    if (location.startsWith(AppRoutes.profile)) return 3;
+
+    return 0;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _pages[_currentIndex],
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: _currentIndex,
-        onDestinationSelected: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.dashboard_outlined),
-            selectedIcon: Icon(Icons.dashboard), 
-            label: "Dashboard"
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.receipt_long_outlined),
-            selectedIcon: Icon(Icons.receipt_long), 
-            label: "Transaction"
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.groups_outlined),
-            selectedIcon: Icon(Icons.groups), 
-            label: "Family"
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person_outline),
-            selectedIcon: Icon(Icons.person), 
-            label: "Profile")
-        ],
+    final currentIndex = _calculateIndex(context);
 
-      ),
+    return Scaffold(
+      body: child,
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           context.push(AppRoutes.addTransaction);
         },
         child: const Icon(Icons.add),
       ),
-      floatingActionButtonLocation: 
-        FloatingActionButtonLocation.centerDocked,
+
+      floatingActionButtonLocation:
+          FloatingActionButtonLocation.endFloat,
+
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: currentIndex,
+
+        onDestinationSelected: (index) {
+          switch (index) {
+            case 0:
+              context.go(AppRoutes.dashboard);
+              break;
+
+            case 1:
+              context.go(AppRoutes.transaction);
+              break;
+
+            case 2:
+              context.go(AppRoutes.family);
+              break;
+
+            case 3:
+              context.go(AppRoutes.profile);
+              break;
+          }
+        },
+
+        destinations: const [
+
+          NavigationDestination(
+            icon: Icon(Icons.dashboard_outlined),
+            selectedIcon: Icon(Icons.dashboard),
+            label: "Dashboard",
+          ),
+
+          NavigationDestination(
+            icon: Icon(Icons.receipt_long_outlined),
+            selectedIcon: Icon(Icons.receipt_long),
+            label: "Transaction",
+          ),
+
+          NavigationDestination(
+            icon: Icon(Icons.groups_outlined),
+            selectedIcon: Icon(Icons.groups),
+            label: "Family",
+          ),
+
+          NavigationDestination(
+            icon: Icon(Icons.person_outline),
+            selectedIcon: Icon(Icons.person),
+            label: "Profile",
+          ),
+        ],
+      ),
     );
   }
 }

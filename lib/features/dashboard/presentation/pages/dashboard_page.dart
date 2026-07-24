@@ -1,3 +1,8 @@
+import 'package:evara_app/core/theme/app_spacing.dart';
+import 'package:evara_app/features/dashboard/presentation/widgets/balance_card.dart';
+import 'package:evara_app/features/dashboard/presentation/widgets/dashboard_header.dart';
+import 'package:evara_app/features/dashboard/presentation/widgets/recent_transaction_section.dart';
+import 'package:evara_app/features/dashboard/presentation/widgets/summary_card.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatelessWidget{
@@ -11,6 +16,13 @@ class DashboardPage extends StatelessWidget{
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
+            DashboardHeader(),
+            SizedBox(height: Spacing.lg,),
+            BalanceCard(),
+            SizedBox(height: Spacing.lg,),
+            SummaryCard(),
+            SizedBox(height: Spacing.lg,),
+            RecentTransactionSection(),
             
           ],
         ),

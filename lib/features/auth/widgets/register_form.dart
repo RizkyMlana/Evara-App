@@ -1,13 +1,10 @@
 import 'package:evara_app/core/router/routes.dart';
-import 'package:evara_app/core/theme/app_colors.dart';
-import 'package:evara_app/core/theme/app_icons.dart';
 import 'package:evara_app/core/theme/app_spacing.dart';
 import 'package:evara_app/core/theme/app_text_styles.dart';
 import 'package:evara_app/core/widgets/app_button.dart';
 import 'package:evara_app/core/widgets/app_logo.dart';
 import 'package:evara_app/core/widgets/app_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 

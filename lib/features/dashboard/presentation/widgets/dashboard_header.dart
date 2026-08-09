@@ -1,8 +1,10 @@
 import 'package:evara_app/core/theme/app_colors.dart';
+import 'package:evara_app/core/theme/app_icons.dart';
 import 'package:evara_app/core/theme/app_spacing.dart';
 import 'package:evara_app/core/theme/app_text_styles.dart';
 import 'package:evara_app/core/utils/greeting_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class DashboardHeader extends StatelessWidget{
   const DashboardHeader({super.key});
@@ -11,13 +13,15 @@ class DashboardHeader extends StatelessWidget{
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const CircleAvatar(
+        CircleAvatar(
           radius: 24,
           backgroundColor: AppColors.primary,
-          child: Icon(
-            Icons.person,
-            color: Colors.white,
-          ),
+          child: SvgPicture.asset(
+            AppIcons.person,
+            width: 24,
+            height: 24,
+            colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
+          )
         ),
         const SizedBox(width: Spacing.md,),
 
@@ -41,7 +45,11 @@ class DashboardHeader extends StatelessWidget{
         ),
         IconButton(
           onPressed: () {}, 
-          icon: const Icon(Icons.notifications_none_rounded),
+          icon: SvgPicture.asset(
+            AppIcons.notificationOutline,
+            width: 24,
+            height: 24,
+          ),
         )
       ],
     );

@@ -55,7 +55,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                 label: "Email",
                 hint: "example@gmail.com",
                 keyboardType: TextInputType.emailAddress,
-                prefixIcon: Icons.email_outlined,
+                prefixIcon: const Icon(Icons.email_outlined),
               ),
 
               const SizedBox(height: Spacing.xl,),

@@ -17,7 +17,7 @@ class AppTextField extends StatelessWidget{
   final String? hint;
   final TextInputType? keyboardType;
   final bool obscureText;
-  final IconData? prefixIcon;
+  final Widget? prefixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class AppTextField extends StatelessWidget{
       decoration: InputDecoration(
         labelText: label,
         hintText: hint,
-        prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
+        prefixIcon: prefixIcon,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppRadius.md)
         )

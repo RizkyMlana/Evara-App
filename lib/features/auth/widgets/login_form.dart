@@ -59,7 +59,7 @@ class _LoginFormState extends State<LoginForm> {
               label: "Email",
               hint: "example@email.com",
               keyboardType: TextInputType.emailAddress,
-              prefixIcon: Icons.email_outlined,
+              prefixIcon: const Icon(Icons.email_outlined),
             ),
 
             const SizedBox(height: Spacing.md),
@@ -68,7 +68,7 @@ class _LoginFormState extends State<LoginForm> {
               controller: passwordController, 
               label: "Password",
               obscureText: true,
-              prefixIcon: Icons.lock_outline,
+              prefixIcon: const Icon(Icons.lock_outline),
             ),
 
             const SizedBox(height: Spacing.lg,),

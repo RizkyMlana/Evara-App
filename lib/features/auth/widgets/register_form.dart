@@ -1,10 +1,13 @@
 import 'package:evara_app/core/router/routes.dart';
+import 'package:evara_app/core/theme/app_colors.dart';
+import 'package:evara_app/core/theme/app_icons.dart';
 import 'package:evara_app/core/theme/app_spacing.dart';
 import 'package:evara_app/core/theme/app_text_styles.dart';
 import 'package:evara_app/core/widgets/app_button.dart';
 import 'package:evara_app/core/widgets/app_logo.dart';
 import 'package:evara_app/core/widgets/app_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 
@@ -60,7 +63,7 @@ class _RegisterFormState extends State<RegisterForm> {
             AppTextField(
               controller: nameController, 
               label: "Full Name",
-              prefixIcon: Icons.person_outlined,
+              prefixIcon: const Icon(Icons.person_outlined)
             ),
             
             const SizedBox(height: Spacing.md,),
@@ -69,7 +72,7 @@ class _RegisterFormState extends State<RegisterForm> {
               controller: emailController, 
               label: "Email",
               keyboardType: TextInputType.emailAddress,
-              prefixIcon: Icons.email_outlined,
+              prefixIcon: const Icon(Icons.email_outlined),
             ),
 
             const SizedBox(height: Spacing.md,),
@@ -78,7 +81,7 @@ class _RegisterFormState extends State<RegisterForm> {
               controller: passwordController, 
               label: "Password",
               obscureText: true,
-              prefixIcon: Icons.lock_outline,
+              prefixIcon: const Icon(Icons.lock_outline),
             ),
 
             const SizedBox(height: Spacing.md,),
@@ -87,7 +90,7 @@ class _RegisterFormState extends State<RegisterForm> {
               controller: confirmPasswordController, 
               label: "Confirm Password",
               obscureText: true,
-              prefixIcon: Icons.lock_outline,
+              prefixIcon: const Icon(Icons.lock_outline),
             ),
 
             const SizedBox(height: Spacing.xl,),

@@ -2,11 +2,12 @@ import 'package:evara_app/core/theme/app_radius.dart';
 import 'package:evara_app/core/theme/app_spacing.dart';
 import 'package:evara_app/core/theme/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class SummaryItem extends StatelessWidget{
   final String title;
   final String amount;
-  final IconData icon;
+  final String icon;
   final Color color;
 
   const SummaryItem({
@@ -33,10 +34,12 @@ class SummaryItem extends StatelessWidget{
             CircleAvatar(
               radius: 18,
               backgroundColor: color.withValues(alpha: 0.1),
-              child: Icon(
+              child: SvgPicture.asset(
                 icon,
-                color: color,
-              ),
+                width: 24,
+                height: 24,
+                colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+              )
             ),
 
             const SizedBox(height: Spacing.xs,),

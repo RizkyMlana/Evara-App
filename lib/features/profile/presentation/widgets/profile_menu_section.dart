@@ -1,3 +1,4 @@
+import 'package:evara_app/core/theme/app_icons.dart';
 import 'package:evara_app/features/profile/presentation/widgets/profile_menu_tile.dart';
 import 'package:flutter/material.dart';
 
@@ -9,29 +10,29 @@ class ProfileMenuSection extends StatelessWidget{
     return Column(
       children: const [
         ProfileMenuTile(
-          icon: Icons.person_outline,
+          icon: AppIcons.personOutline,
           title: "Edit Profile",
         ),
 
         ProfileMenuTile(
-          icon: Icons.groups_outlined,
+          icon: AppIcons.groupOutline,
           title: "Family",
         ),
 
         ProfileMenuTile(
-          icon: Icons.mail_outline,
+          icon: AppIcons.invite,
           title: "Invitations",
         ),
 
         Divider(),
 
         ProfileMenuTile(
-          icon: Icons.notifications_outlined,
+          icon: AppIcons.notificationOutline,
           title: "Notifications",
         ),
 
         ProfileMenuTile(
-          icon: Icons.info_outline,
+          icon: AppIcons.info,
           title: "About",
         ),
       ],

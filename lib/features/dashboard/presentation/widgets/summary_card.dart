@@ -1,4 +1,5 @@
 import 'package:evara_app/core/theme/app_colors.dart';
+import 'package:evara_app/core/theme/app_icons.dart';
 import 'package:evara_app/core/theme/app_spacing.dart';
 import 'package:evara_app/features/dashboard/presentation/widgets/summary_item.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class SummaryCard extends StatelessWidget{
         SummaryItem(
           title: "Income", 
           amount: "Rp. 5.000.000", 
-          icon: Icons.arrow_downward, 
+          icon: AppIcons.arrowUpward, 
           color: AppColors.income
         ),
 
@@ -22,7 +23,7 @@ class SummaryCard extends StatelessWidget{
         SummaryItem(
           title: "Expense", 
           amount: "Rp. 2.000.000", 
-          icon: Icons.arrow_upward, 
+          icon: AppIcons.arrowDownward, 
           color: AppColors.expense
         )
       ],

@@ -1,8 +1,8 @@
 import 'package:evara_app/core/theme/app_radius.dart';
 import 'package:evara_app/core/theme/app_spacing.dart';
 import 'package:evara_app/core/theme/app_text_styles.dart';
+import 'package:evara_app/core/widgets/app_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class SummaryItem extends StatelessWidget{
   final String title;
@@ -34,12 +34,9 @@ class SummaryItem extends StatelessWidget{
             CircleAvatar(
               radius: 18,
               backgroundColor: color.withValues(alpha: 0.1),
-              child: SvgPicture.asset(
-                icon,
-                width: 24,
-                height: 24,
-                colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
-              )
+              child: AppIcon(
+                asset: icon,
+                color: color),
             ),
 
             const SizedBox(height: Spacing.xs,),

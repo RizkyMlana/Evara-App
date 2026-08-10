@@ -2,8 +2,8 @@ import 'package:evara_app/core/theme/app_colors.dart';
 import 'package:evara_app/core/theme/app_icons.dart';
 import 'package:evara_app/core/theme/app_spacing.dart';
 import 'package:evara_app/core/theme/app_text_styles.dart';
+import 'package:evara_app/core/widgets/app_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class EmptyFamily extends StatelessWidget{
   const EmptyFamily({super.key});
@@ -14,12 +14,11 @@ class EmptyFamily extends StatelessWidget{
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SvgPicture.asset(
-            AppIcons.group2,
-            width: 36,
-            height: 36,
-            colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-          ),
+          AppIcon(
+            asset: AppIcons.group2,
+            color: AppColors.primary,
+            size: 36,
+            ),
 
           const SizedBox(height: Spacing.lg,),
 
@@ -40,12 +39,7 @@ class EmptyFamily extends StatelessWidget{
 
           FilledButton.icon(
             onPressed: () {},
-            icon: SvgPicture.asset(
-              AppIcons.add,
-              width: 24,
-              height: 24,
-              colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
-            ),
+            icon: AppIcon(asset: AppIcons.add, color: Colors.white),
             label: const Text("Create Family"),
           ),
 
@@ -54,12 +48,7 @@ class EmptyFamily extends StatelessWidget{
           OutlinedButton.icon(
             onPressed: () {}, 
             label: const Text("Join Family"),
-            icon: SvgPicture.asset(
-              AppIcons.login,
-              width: 24,
-              height: 24,
-              colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-            ),
+            icon: AppIcon(asset: AppIcons.login, color: AppColors.primary),
           )
         ],
       ),

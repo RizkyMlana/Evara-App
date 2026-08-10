@@ -1,9 +1,9 @@
 import 'package:evara_app/core/router/routes.dart';
 import 'package:evara_app/core/theme/app_colors.dart';
+import 'package:evara_app/core/widgets/app_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:evara_app/core/theme/app_icons.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class AppShell extends StatelessWidget {
   final Widget child;
@@ -34,12 +34,10 @@ class AppShell extends StatelessWidget {
         onPressed: () {
           context.push(AppRoutes.addTransaction);
         },
-        child: SvgPicture.asset(
-          AppIcons.add, 
-          width: 24, 
-          height: 24,
-          colorFilter: const ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-        ),
+        child: AppIcon(
+          asset: AppIcons.add,
+          color: AppColors.primary,
+          )
       ),
 
       floatingActionButtonLocation:
@@ -71,66 +69,49 @@ class AppShell extends StatelessWidget {
         destinations: [
 
           NavigationDestination(
-            icon: SvgPicture.asset(
-              AppIcons.homeOutline,
-              width: 24,
-              height: 24,
-              colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-            ),
-            selectedIcon: SvgPicture.asset(
-              AppIcons.home,
-              width: 24,
-              height: 24,
-              colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-            ),
+            icon: AppIcon(
+              asset : AppIcons.homeOutline,
+              color: AppColors.primary,
+              ),
+            selectedIcon: AppIcon(
+              asset: AppIcons.home,
+              color: AppColors.primary,
+              ),
             label: "Dashboard",
           ),
 
           NavigationDestination(
-            icon: SvgPicture.asset(
-              AppIcons.receiptOutline,
-              width: 24,
-              height: 24,
-              colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-            ),
-            selectedIcon: SvgPicture.asset(
-              AppIcons.receipt,
-              width: 24,
-              height: 24,
-              colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-            ),
+            icon: AppIcon(
+              asset: AppIcons.receiptOutline,
+              color: AppColors.primary,
+              ),
+            selectedIcon: AppIcon(
+              asset: AppIcons.receipt,
+              color: AppColors.primary,),
             label: "Transaction",
           ),
 
           NavigationDestination(
-            icon: SvgPicture.asset(
-              AppIcons.groupOutline,
-              width: 24,
-              height: 24,
-              colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-            ),
-            selectedIcon: SvgPicture.asset(
-              AppIcons.group,
-              width: 24,
-              height: 24,
-              colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-            ),
+            icon: AppIcon(
+              asset: AppIcons.groupOutline,
+              color: AppColors.primary,
+              ),
+            selectedIcon: AppIcon(
+              asset: AppIcons.group,
+              color: AppColors.primary,
+              ),
             label: "Family",
           ),
 
           NavigationDestination(
-            icon: SvgPicture.asset(
-              AppIcons.personOutline,
-              width: 24,
-              height: 24,
-              colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-            ),
-            selectedIcon: SvgPicture.asset(
-              AppIcons.person,
-              width: 24,
-              height: 24,
-              colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-            ),
+            icon: AppIcon(
+              asset: AppIcons.personOutline,
+              color: AppColors.primary,
+              ),
+            selectedIcon: AppIcon(
+              asset: AppIcons.person,
+              color: AppColors.primary,
+              ),
             label: "Profile",
           ),
         ],
